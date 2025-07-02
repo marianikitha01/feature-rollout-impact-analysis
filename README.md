@@ -87,6 +87,5 @@ feature-rollout-impact-analysis/
 | Satisfaction Score        | 0.0000   |     Yes     |
 
 Key Insight: While the new feature did not significantly impact conversion rate, it **reduced churn**, **increased user satisfaction**, and **boosted engagement**.
+
 ---
-
-
