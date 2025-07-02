@@ -1,0 +1,25 @@
+trigger:
+  - main  # or whatever your branch name is
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.10'
+
+  - script: python -m pip install --upgrade pip
+    displayName: 'Upgrade pip'
+
+  - script: pip install -r requirements.txt
+    displayName: 'Install dependencies'
+
+  - script: python load_to_postgres.py
+    displayName: 'Load data to PostgreSQL'
+
+  - script: python enhance_dataset.py
+    displayName: 'Enhance Dataset'
+
+  - script: python ab_test_analysis.py
+    displayName: 'Run A/B Test Analysis'
